@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>サポート | Famlog</title>
+  <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<main>
+  <header class="page">
+    <p class="app-name">Famlog</p>
+    <h1>サポート・お問い合わせ</h1>
+  </header>
+
+  <p class="lead">「Famlog」は、家族の予定・タスク・その日の気持ちをひとつにまとめて記録できるiPhoneアプリです。</p>
+
+  <h2>よくある質問</h2>
+
+  <h3>データはどこに保存されますか？</h3>
+  <p>お使いのiPhoneの中にだけ保存されます。外部のサーバーには送信されません。アカウント登録も不要です。</p>
+
+  <h3>機種変更のとき、データを引き継げますか？</h3>
+  <p>本アプリ自体には引き継ぎ機能がありません。iCloudバックアップやパソコンへのバックアップからiPhoneを復元した場合は、バックアップに含まれていたデータが復元されることがあります。</p>
+
+  <h3>タスクの通知が届きません</h3>
+  <ul>
+    <li>タスクに「期限」が設定されているか確認してください。通知は期限の日を基準にお知らせします。</li>
+    <li>iPhoneの「設定」→「Famlog」→「通知」がオンになっているか確認してください。</li>
+    <li>通知の時刻がすでに過ぎている場合や、完了にしたタスクは通知されません。</li>
+  </ul>
+
+  <h3>カラー（テーマ）を変えたい</h3>
+  <p>アプリ下部の「設定」→「テーマカラー」から、ピンク・ブルー・グリーン・オレンジ・ブラックを選べます。</p>
+
+  <h3>データをすべて消したい</h3>
+  <p>「設定」→「すべてのデータを削除」から削除できます。削除したデータは元に戻せません。</p>
+
+  <h3>iPhoneの標準カレンダーと連携できますか？</h3>
+  <p>現在は対応していません。本アプリのカレンダーは、本アプリの中だけで使う独自のカレンダーです。</p>
+
+  <h2>不具合が起きたときは</h2>
+  <p>まず次の方法をお試しください。</p>
+  <ul>
+    <li>アプリを一度終了して、もう一度開く</li>
+    <li>App Storeで本アプリを最新版にアップデートする</li>
+    <li>iPhoneを再起動する</li>
+  </ul>
+  <p>それでも解決しない場合は、下記のお問い合わせ先に、次の内容をお知らせください。</p>
+  <ul>
+    <li>お使いのiPhoneの機種とiOSのバージョン</li>
+    <li>本アプリのバージョン（「設定」→「バージョン」）</li>
+    <li>どの画面で、どんな操作をしたときに起きたか</li>
+    <li>可能であれば、画面のスクリーンショット</li>
+  </ul>
+  <p>※アプリを削除するとデータも消えてしまうため、不具合の解消のためにアプリを削除する前に、お問い合わせください。</p>
+
+  <h2>お問い合わせ</h2>
+  <p>ご意見・ご要望や不具合のご報告をお寄せください。「送信する」を押すと、この画面から運営者に直接届きます。</p>
+
+  <form id="contact-form" class="box" novalidate>
+    <label class="field">
+      <span>種別</span>
+      <select id="contact-category">
+        <option value="不具合">不具合</option>
+        <option value="ご要望">ご要望</option>
+        <option value="その他">その他</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>お問い合わせ内容</span>
+      <textarea id="contact-message" rows="6" placeholder="どの画面で、どんな操作をしたときに起きたかを書いていただけると助かります。"></textarea>
+    </label>
+
+    <label class="field">
+      <span>返信先メールアドレス（任意）</span>
+      <input id="contact-email" type="email" inputmode="email" autocomplete="email" placeholder="返信が必要な場合のみ">
+    </label>
+
+    <button id="contact-submit" type="submit">送信する</button>
+    <p id="contact-status" class="status" role="status" hidden></p>
+  </form>
+
+  <p class="lead">送信時に、アプリのバージョンと端末・OSの情報が自動で添えられます（不具合を調べるために使います）。返信までにお時間をいただく場合があります。</p>
+
+  <nav class="links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">利用規約（Apple標準使用許諾契約）</a>
+  </nav>
+</main>
+
+<script>
+  // お問い合わせフォームの送信先（Formspree）。src/lib/app-info.ts の SUPPORT_FORM_ENDPOINT と同じ値にする。
+  var FORM_ENDPOINT = "https://formspree.io/f/mjyknllr";
+  // 送信できなかったときにメールアプリで使う宛先。src/lib/app-info.ts の SUPPORT_EMAIL と同じ値にする。
+  var SUPPORT_EMAIL = "yfam.252525@gmail.com";
+  // src/lib/app-info.ts の APP_VERSION と同じ値にする。
+  var APP_VERSION = "1.0.0";
+
+  (function () {
+    var form = document.getElementById("contact-form");
+    var category = document.getElementById("contact-category");
+    var message = document.getElementById("contact-message");
+    var email = document.getElementById("contact-email");
+    var submit = document.getElementById("contact-submit");
+    var status = document.getElementById("contact-status");
+
+    function show(text, kind) {
+      status.textContent = text;
+      status.className = "status " + kind;
+      status.hidden = false;
+    }
+
+    /** 送信できなかったときの逃げ道。メールアプリに同じ内容の下書きを作る */
+    function openMail(label, body) {
+      var subject = "[Famlog] " + label;
+      window.location.href =
+        "mailto:" + SUPPORT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var text = message.value.trim();
+      if (!text) {
+        show("お問い合わせ内容を入力してください。", "ng");
+        message.focus();
+        return;
+      }
+
+      var label = category.value;
+      var replyTo = email.value.trim();
+      var userAgent = navigator.userAgent || "不明";
+      var mailBody = [
+        text,
+        "",
+        "----------------",
+        "種別：" + label,
+        "返信先：" + (replyTo || "（未入力）"),
+        "アプリ：Famlog v" + APP_VERSION,
+        "端末：" + userAgent,
+      ].join("\n");
+
+      submit.disabled = true;
+      show("送信しています…", "");
+
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: "[Famlog] " + label,
+          種別: label,
+          内容: text,
+          // Formspree はこの email を返信先として扱う
+          email: replyTo,
+          アプリ: "Famlog v" + APP_VERSION,
+          端末: userAgent,
+        }),
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            show("送信しました。お寄せいただきありがとうございます。", "ok");
+          } else {
+            show("送信できませんでした。メールアプリを開きます。", "ng");
+            openMail(label, mailBody);
+          }
+        })
+        .catch(function () {
+          show("送信できませんでした。メールアプリを開きます。", "ng");
+          openMail(label, mailBody);
+        })
+        .finally(function () {
+          submit.disabled = false;
+        });
+    });
+  })();
+</script>
+</body>
+</html>

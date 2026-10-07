@@ -1,0 +1,170 @@
+:root {
+  --main: #ff7f91;
+  --deep: #cc4f65;
+  --sub: #ffe8e8;
+  --text: #3a2a2a;
+  --muted: #9a8a8a;
+  --line: rgba(0, 0, 0, 0.07);
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0 16px 48px;
+  background: #fffafb;
+  color: var(--text);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+header.page {
+  padding: 32px 0 8px;
+}
+
+.app-name {
+  margin: 0;
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+h1 {
+  margin: 4px 0 0;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+h2 {
+  margin: 32px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+}
+
+h3 {
+  margin: 20px 0 4px;
+  font-size: 15px;
+}
+
+p,
+ul {
+  margin: 8px 0;
+}
+
+ul {
+  padding-left: 1.3em;
+}
+
+a {
+  color: var(--deep);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.box {
+  margin: 12px 0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+/* お問い合わせフォーム（support.html） */
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.field > span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field select,
+.field textarea,
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  background: #fffafb;
+  color: var(--text);
+  font-family: inherit;
+  /* 16px 未満だと iOS が入力時に画面を拡大してしまう */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+#contact-submit {
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--main);
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#contact-submit:disabled {
+  opacity: 0.5;
+}
+
+.status {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status.ok {
+  color: var(--deep);
+}
+
+.status.ng {
+  color: #c0392b;
+}
+
+.dates {
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+nav.links {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+nav.links a {
+  display: inline-block;
+  margin: 0 16px 8px 0;
+}

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>アカウントの削除 | Famlog</title>
+  <link rel="stylesheet" href="legal.css">
+</head>
+<body>
+<main>
+  <header class="page">
+    <p class="app-name">Famlog</p>
+    <h1>アカウントの削除</h1>
+  </header>
+
+  <p class="lead">Famlog のアカウントと、クラウドに保存したデータを削除する方法です。アプリの中からすぐに削除できます。アプリを使えない場合は、このページから削除を依頼できます。</p>
+
+  <h2>1. アプリの中で削除する（いちばん早い方法）</h2>
+  <ol>
+    <li>Famlog を開き、下の「その他」をタップする</li>
+    <li>「アカウントとデータ」→「アカウントを削除」をタップする</li>
+    <li>確認の画面で、削除を選ぶ</li>
+  </ol>
+  <p>削除を選ぶと、すぐにログアウトし、端末の中のデータは消えます。参加しているグループからは、すぐに抜けます。</p>
+  <p>クラウドに保存したデータは、誤って削除した場合に元へ戻せるよう、<strong>削除の申し込みから30日間だけ</strong>保管します。この30日以内に、同じアカウント（Apple ID またはメールアドレス）でログインすると、削除の申し込みが取り消され、データが元に戻ります。30日をすぎると、ログインの情報も含めて完全に削除され、元に戻せません。</p>
+  <p>「登録せずに始める」（ゲスト）で使っている場合は、元に戻す方法がないため、削除を選んだ時点で完全に削除されます。</p>
+
+  <h2>2. アプリを使えないとき（このページから依頼する）</h2>
+  <p>アプリを削除してしまった、端末を手放した、などの理由でアプリの中から削除できない場合は、下のフォームから削除を依頼してください。</p>
+  <p>依頼を受け付けると、運営者から、登録のメールアドレス宛てに確認のメールをお送りします。そのメールに返信していただいた時点で本人確認とし、運営者が削除の手続きを行います。手続きのあとは、アプリの中で削除した場合と同じく、30日後に完全に削除されます。確認のメールは、受け付けから7日以内にお送りします。</p>
+  <p>Apple でサインイン（iPhone 版）で「メールを非公開」を使って登録した場合は、Apple が作った転送用のアドレス（…@privaterelay.appleid.com）宛てに確認のメールが届きます。そのアドレスが分からない場合は、補足にその旨を書いてください。</p>
+  <p>「登録せずに始める」（ゲスト）のアカウントには、メールアドレスがありません。アプリの中の「アカウントを削除」で、すぐに完全に削除できます。アプリを削除してしまった場合、そのアカウントには誰もログインできなくなり、運営者もどのデータか特定できないため、Web からの削除はできません。</p>
+
+  <form id="delete-form" class="box" novalidate>
+    <label class="field">
+      <span>ログインの方法</span>
+      <select id="delete-method">
+        <option value="メールアドレスとパスワード">メールアドレスとパスワード</option>
+        <option value="Appleでサインイン">Apple でサインイン（iPhone 版）</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>登録しているメールアドレス</span>
+      <input id="delete-email" type="email" inputmode="email" autocomplete="email" placeholder="Famlog に登録したメールアドレス">
+    </label>
+
+    <label class="field">
+      <span>補足（任意）</span>
+      <textarea id="delete-note" rows="3" placeholder="確認のメールが受け取れない事情などがあれば、お書きください。"></textarea>
+    </label>
+
+    <button id="delete-submit" type="submit">削除を依頼する</button>
+    <p id="delete-status" class="status" role="status" hidden></p>
+  </form>
+
+  <h2>3. 削除されるもの・残るもの</h2>
+  <p>アカウントを削除すると、次のものが削除されます。</p>
+  <ul>
+    <li>アカウントの情報（識別子、メールアドレス、パスワード）</li>
+    <li>プロフィール（表示名、アイコン、アイコンに設定した写真）</li>
+    <li>本人の予定・タスク・気持ちの記録・メンバー・アプリの設定</li>
+    <li>グループへの参加の記録</li>
+    <li>端末の中のデータ（予定に付けた写真、パスコードを含む。アプリの中で削除した場合）</li>
+  </ul>
+  <p>次のものは、アカウントを削除しても残ります。</p>
+  <ul>
+    <li>グループのカレンダーに登録した予定と、グループのメンバー：グループのデータとして、ほかの参加者に残ります。本人がグループの最後の1人だった場合は、グループごと削除されます</li>
+    <li>お問い合わせの記録：お問い合わせフォームから送っていただいた内容は、回答と不具合の調査のため、運営者のメールに残ります</li>
+    <li>着せ替えなど、ストア（App Store・Google Play）で購入した記録：ストアの側に残ります。運営者は、ストアの購入の記録を削除できません</li>
+  </ul>
+
+  <h2>4. アカウントを残して、データだけ消したい</h2>
+  <ul>
+    <li>予定・タスク・気持ちの記録などは、それぞれの画面で個別に削除できます</li>
+    <li>「その他」→「データ」→「すべてのデータを削除」で、クラウドに保存したデータを含めてすぐに削除し、ログアウトします。アカウント（ログインの情報）は残るので、同じアカウントでまた始められます。削除したデータは元に戻せません</li>
+    <li>グループを抜けるには、グループの設定から「グループを抜ける」を選びます</li>
+  </ul>
+
+  <h2>お問い合わせ</h2>
+  <p>削除についてのご質問は、<a href="support.html">サポートページ</a>のフォームからお送りください。</p>
+
+  <nav class="links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="support.html">サポート</a>
+  </nav>
+</main>
+
+<script>
+  // 送信先はサポートページのお問い合わせフォームと同じ（Formspree）。件名で見分ける。
+  var FORM_ENDPOINT = "https://formspree.io/f/mjyknllr";
+  var SUPPORT_EMAIL = "yfam.252525@gmail.com";
+
+  (function () {
+    var form = document.getElementById("delete-form");
+    var method = document.getElementById("delete-method");
+    var email = document.getElementById("delete-email");
+    var note = document.getElementById("delete-note");
+    var submit = document.getElementById("delete-submit");
+    var status = document.getElementById("delete-status");
+
+    function show(text, kind) {
+      status.textContent = text;
+      status.className = "status " + kind;
+      status.hidden = false;
+    }
+
+    /** 送信できなかったときの逃げ道。メールアプリに同じ内容の下書きを作る */
+    function openMail(body) {
+      window.location.href =
+        "mailto:" + SUPPORT_EMAIL +
+        "?subject=" + encodeURIComponent("[Famlog] アカウント削除の依頼") +
+        "&body=" + encodeURIComponent(body);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var address = email.value.trim();
+      if (!address || address.indexOf("@") < 0) {
+        show("登録しているメールアドレスを入力してください。", "ng");
+        email.focus();
+        return;
+      }
+
+      var extra = note.value.trim();
+      var mailBody = [
+        "Famlog のアカウントの削除を依頼します。",
+        "",
+        "ログインの方法：" + method.value,
+        "登録のメールアドレス：" + address,
+        "補足：" + (extra || "（なし）"),
+      ].join("\n");
+
+      submit.disabled = true;
+      show("送信しています…", "");
+
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: "[Famlog] アカウント削除の依頼",
+          種別: "アカウント削除の依頼",
+          ログインの方法: method.value,
+          // Formspree はこの email を返信先として扱う
+          email: address,
+          補足: extra,
+        }),
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            show("受け付けました。7日以内に、登録のメールアドレス宛てに確認のメールをお送りします。", "ok");
+          } else {
+            show("送信できませんでした。メールアプリを開きます。", "ng");
+            openMail(mailBody);
+          }
+        })
+        .catch(function () {
+          show("送信できませんでした。メールアプリを開きます。", "ng");
+          openMail(mailBody);
+        })
+        .finally(function () {
+          submit.disabled = false;
+        });
+    });
+  })();
+</script>
+</body>
+</html>

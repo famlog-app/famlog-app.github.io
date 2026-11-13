@@ -5,11 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>アカウントの削除 | Famlog</title>
   <link rel="stylesheet" href="legal.css">
+  <meta name="description" content="家族の予定・タスク・気持ちを記録するアプリ「Famlog」のアカウントの削除です。">
+  <meta name="theme-color" content="#fbfcfa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1412" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="images/icon.png">
+  <link rel="apple-touch-icon" href="images/icon.png">
+  <script>
+    // アプリの中（iframe）で開いたときは data-embed を付ける（サイトのヘッダーとダークモードを使わない）
+    try { if (window.self !== window.top) document.documentElement.setAttribute("data-embed", ""); } catch (e) { document.documentElement.setAttribute("data-embed", ""); }
+  </script>
 </head>
 <body>
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html"><img src="images/icon.png" alt="" width="32" height="32">Famlog</a>
+    <nav class="site-nav" aria-label="メニュー">
+      <a href="support.html">サポート</a>
+      <a href="privacy.html">プライバシー</a>
+      <a class="wide" href="terms.html">利用規約</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-  <header class="page">
-    <p class="app-name">Famlog</p>
+  <header class="page-hero">
+    <p class="eyebrow">Famlog</p>
     <h1>アカウントの削除</h1>
   </header>
 
@@ -80,12 +100,20 @@
   <h2>お問い合わせ</h2>
   <p>削除についてのご質問は、<a href="support.html">サポートページ</a>のフォームからお送りください。</p>
 
-  <nav class="links">
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="terms.html">利用規約</a>
-    <a href="support.html">サポート</a>
-  </nav>
 </main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <nav aria-label="サイト内のページ">
+      <a class="site-only" href="index.html">ホーム</a>
+      <a href="support.html">サポート・お問い合わせ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+      <a href="delete-account.html">アカウントの削除</a>
+    </nav>
+    <p class="copy">© 2026 Famlog</p>
+  </div>
+</footer>
 
 <script>
   // 送信先はサポートページのお問い合わせフォームと同じ（Formspree）。件名で見分ける。
